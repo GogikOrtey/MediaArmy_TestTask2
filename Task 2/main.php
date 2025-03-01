@@ -10,6 +10,15 @@
 // print_r($mass1);
 
 
+
+
+
+
+
+
+
+
+
 // Определяем путь к файлу
 $file = 'DataBase.csv';
 
@@ -28,13 +37,21 @@ if ($handle === false) {
 // Устанавливаем разделитель табуляции
 $separator = "\t";
 
-// Читаем файл строка за строкой
+// Массив для хранения данных
+$data = [];
+
+// Читаем файл строка за строкой 
 while (($row = fgetcsv($handle, 0, $separator)) !== false) {
-    print_r($row);
+    // print_r($row);
+    $data[] = $row;
 }
 
 // Закрываем файл
 fclose($handle);
+
+// Выводим массив
+print_r($data);
+
 
 
 
