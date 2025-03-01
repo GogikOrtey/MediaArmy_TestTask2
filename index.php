@@ -31,9 +31,9 @@
                 // Генерация строк таблицы
                 for ($i = 1; $i < count($data); $i++) {
                     echo "<tr>";
-                    foreach ($data[$i] as $cell) {
-                        echo "<td>$cell</td>";
-                    }
+                        echo "<td>" . $data[$i][0] . "</td>";
+                        echo "<td>" . $data[$i][1] . "</td>";
+                        echo "<td>" . $data[$i][2] . "</td>";
                     echo "</tr>";
                 }
                 ?>

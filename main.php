@@ -51,9 +51,9 @@ while (($row = fgetcsv($handle, 0, $separator)) !== false) {
         if (empty($value)) {
             $row[$index] = "-";
             if ($isEchoErrors) {
-                echo "Ошибка: Пустое значение заменено на '-' в строке:\n";
+                // echo "Ошибка: Пустое значение заменено на '-' в строке:\n";
             }
-            print_r($row);
+            // print_r($row);
             $encounteredErrorsCounter++;
         }
     }
@@ -67,17 +67,17 @@ while (($row = fgetcsv($handle, 0, $separator)) !== false) {
 // Закрываем файл
 fclose($handle);
 
-// Выводим массив
-print_r($data);
+// // Выводим массив
+// print_r($data);
 
-if($encounteredErrorsCounter > 0) {
-    echo("\nКоличество ошибок, произошедших при загрузке данных из входного файла: $encounteredErrorsCounter");
-}
+// if($encounteredErrorsCounter > 0) {
+//     echo("\nКоличество ошибок, произошедших при загрузке данных из входного файла: $encounteredErrorsCounter");
+// }
 
-$resultCountLoadDataStr = $allCounterForStr - 1 - $encounteredErrorsCounter;
-// -1, потому что первая запись - это заголовки строк
+// $resultCountLoadDataStr = $allCounterForStr - 1 - $encounteredErrorsCounter;
+// // -1, потому что первая запись - это заголовки строк
 
-echo("\n\nОбщее количество загруженных записей: $resultCountLoadDataStr");
+// echo("\n\nОбщее количество загруженных записей: $resultCountLoadDataStr");
 
 
 

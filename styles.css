@@ -26,7 +26,10 @@ body {
     table {
         width: 70%;
         border-collapse: collapse;
-        margin: auto
+        margin: auto;
+        table-layout: fixed;
+        word-wrap: break-word;
+        overflow: hidden;
     }
     
     th, td {
@@ -34,6 +37,15 @@ body {
         border: 1px solid #000000;
         padding: 8px;
         text-align: left;
+    }
+
+    td:first-child {
+        width: 20%;
+        /* background-color: red; */
+    }
+
+    td:nth-child(2) {
+        width: 30%;
     }
     
     th {
@@ -45,7 +57,6 @@ body {
         font-size: 22px;
         text-align: center
     }
-    
 }
 
 
