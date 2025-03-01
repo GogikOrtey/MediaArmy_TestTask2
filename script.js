@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const styles = {
         width: '0',
         height: '0',
-        border: '2px solid transparent',
+        // border: '2px solid transparent',
         borderTopColor: 'rgba(255, 255, 255, 1)',
         borderRightColor: 'rgba(255, 255, 255, 1)',
         borderBottomColor: 'rgba(255, 255, 255, 1)',
@@ -17,6 +17,11 @@ document.addEventListener("DOMContentLoaded", function() {
         const star = document.createElement('div');
         star.classList.add('star');
         Object.assign(star.style, styles);
+
+        // Задание случайного размера для заезды:
+        let randSizeBord = (Math.random() * 2.99) + 0.01; // От 0.01 до 3.0
+        star.style.border = `${randSizeBord}px solid transparent`;
+
         const {x, y} = getRandomPosition();
         star.style.left = `${x}px`;
         star.style.top = `${y}px`;
@@ -61,8 +66,21 @@ document.addEventListener("DOMContentLoaded", function() {
         }, interval);
     }
 
+    // Вычисляет необходимое количество звёзд, которое нужно сгенерировать на экране
+    // Она нужна, что бы на разных экранах количество звёзд было одинаковым
+    function calculateStars(screenWidth, screenHeight) {
+        const screenArea = screenWidth * screenHeight;
+        const baseNumberOfStars = 35; // Количество звёзд для экрана 1920x1080
+        const baseScreenArea = 1920 * 1080;
+        
+        return Math.round((screenArea / baseScreenArea) * baseNumberOfStars);
+    }
+    const starCount = calculateStars(window.innerWidth, window.innerHeight);
+    
+    console.log('Количество звёзд:', starCount);    
+
     // Инициализируем звёзды и запускаем мерцание
-    const starCount = 5;
+    // const starCount = 35;
     const stars = initializeStars(starCount);
     startTwinkling(stars);
 });
