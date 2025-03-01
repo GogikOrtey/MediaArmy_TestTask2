@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles.css">
     <!-- Подключаем PHP файл -->
     <?php include 'main.php'; ?>
-    <script src="stars.js"></script>
+    <!-- <script src="stars.js"></script> -->
 </head>
 <body>
     <div class="header">

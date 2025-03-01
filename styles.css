@@ -1,9 +1,9 @@
 body {
     /* background-color: #000044; /* Тёмно-синий цвет */
-    /* background-color: #000030; /* Тёмно-синий цвет */
-    /* color: #FFFFFF; /* Белый цвет текста */
+    background-color: #000030; /* Тёмно-синий цвет */
+    color: #FFFFFF; /* Белый цвет текста */
 
-    background-color: #d1d1d1; /* Тёмно-синий цвет */
+    /* background-color: #d1d1d1; /* Тёмно-синий цвет */
 
     margin: 0;
 }
