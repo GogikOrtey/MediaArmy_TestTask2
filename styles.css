@@ -38,15 +38,6 @@ body {
         padding: 8px;
         text-align: left;
     }
-
-    td:first-child {
-        width: 20%;
-        /* background-color: red; */
-    }
-
-    td:nth-child(2) {
-        width: 30%;
-    }
     
     th {
         background-color: #f2f2f2;

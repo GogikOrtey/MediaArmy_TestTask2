@@ -19,23 +19,23 @@
             <thead>
                 <tr>
                     <?php
-                    // Генерация заголовков таблицы
-                    foreach ($data[0] as $header) {
-                        echo "<th>$header</th>";
-                    }
+                        // В 0 элементе массива хранятся заголовки из файла
+                        echo "<th style='width: 15%;'>" . $data[0][0] . "</th>";
+                        echo "<th style='width: 35%;'>" . $data[0][1] . "</th>";
+                        echo "<th>" . $data[0][2] . "</th>";
                     ?>
                 </tr>
             </thead>
             <tbody>
                 <?php
-                // Генерация строк таблицы
-                for ($i = 1; $i < count($data); $i++) {
-                    echo "<tr>";
-                        echo "<td>" . $data[$i][0] . "</td>";
-                        echo "<td>" . $data[$i][1] . "</td>";
-                        echo "<td>" . $data[$i][2] . "</td>";
-                    echo "</tr>";
-                }
+                    // Генерация строк таблицы
+                    for ($i = 1; $i < count($data); $i++) {
+                        echo "<tr>";
+                            echo "<td>" . $data[$i][0] . "</td>";
+                            echo "<td>" . $data[$i][1] . "</td>";
+                            echo "<td>" . $data[$i][2] . "</td>";
+                        echo "</tr>";
+                    }
                 ?>
             </tbody>
         </table>
