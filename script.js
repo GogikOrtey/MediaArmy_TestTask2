@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
         star.classList.add('star');
         Object.assign(star.style, styles);
 
-        // Задание случайного размера для звезды:
+        // Задание случайного размера для звезды
         let randSizeBord = (Math.random() * 2.99) + 0.01; // От 0.01 до 3.0
         star.style.border = `${randSizeBord}px solid transparent`;
 
@@ -25,20 +25,20 @@ document.addEventListener("DOMContentLoaded", function() {
         star.style.borderBottomColor = colorForStars;
         star.style.borderLeftColor = colorForStars;
 
-        // Задаём случайное положение на странице:
+        // Задаём случайное положение на странице
         const {x, y} = getRandomPosition();
         star.style.left = `${x}px`;
         star.style.top = `${y}px`;
 
-        // Добавляем на страницу:
-        document.body.appendChild(star);
+        // Добавляем на страницу, на самый последний слой
+        document.body.prepend(star); 
         return star;
     }
 
     // Получение случайных координат
     function getRandomPosition() {
-        const x = Math.random() * window.innerWidth;
-        const y = Math.random() * window.innerHeight;
+        const x = Math.random() * (window.innerWidth-10)-10;
+        const y = Math.random() * (window.innerHeight-10)-10;
         return {x, y};
     }
 
