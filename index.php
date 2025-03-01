@@ -20,8 +20,8 @@
                 <tr>
                     <?php
                         // В 0 элементе массива хранятся заголовки из файла
-                        echo "<th style='width: 15%;'>" . $data[0][0] . "</th>";
-                        echo "<th style='width: 35%;'>" . $data[0][1] . "</th>";
+                        echo "<th style='min-width: 150px; width: auto;'>" . $data[0][0] . "</th>";
+                        echo "<th style='min-width: 100px; width: auto;' class='center-column'>" . $data[0][1] . "</th>";
                         echo "<th>" . $data[0][2] . "</th>";
                     ?>
                 </tr>
@@ -32,7 +32,12 @@
                     for ($i = 1; $i < count($data); $i++) {
                         echo "<tr>";
                             echo "<td>" . $data[$i][0] . "</td>";
-                            echo "<td>" . $data[$i][1] . "</td>";
+                            if($data[$i][1] == "-") { // Есть ли в массиве корректная ссылка?
+                                echo "<td class='center-column'>-</td>"; // Если нет
+                            } else {
+                                echo "<td class='center-column'>" . 
+                                "<a href='" . $data[$i][1] . "'>" . "Ссылка" . "</a></td>"; // Если есть
+                            }
                             echo "<td>" . $data[$i][2] . "</td>";
                         echo "</tr>";
                     }
