@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
         star.classList.add('star');
         Object.assign(star.style, styles);
 
-        // Задание случайного размера для заезды:
+        // Задание случайного размера для звезды:
         let randSizeBord = (Math.random() * 2.99) + 0.01; // От 0.01 до 3.0
         star.style.border = `${randSizeBord}px solid transparent`;
 
@@ -60,23 +60,29 @@ document.addEventListener("DOMContentLoaded", function() {
         star.style.borderLeftColor = `rgba(255, 255, 255, ${alpha})`;
     }
 
-    // Таймер, вызывающийся 5 раз в секунду
+    // Таймер, вызывающийся с разными интервалами для каждой звезды
     function startTwinkling(stars) {
-        let step = 0;
-        const steps = [1, 0.9, 0.8, 0.7, 0.6, 0.7, 0.8, 0.9, 1];
-        const interval = 200; // 200 миллисекунд
+        const steps = [1, 0.9, 0.8, 0.7, 0.6, 0.5, 0.6, 0.7, 0.8, 0.9, 1];
 
-        setInterval(() => {
-            stars.forEach(star => changeOpacity(star, step, steps));
-            step = (step + 1) % steps.length;
-        }, interval);
+        stars.forEach(star => {
+            let step = Math.floor(Math.random() * steps.length);
+            // Случайный интервал от 100 до 300 миллисекунд
+            const interval = Math.floor(Math.random() * 300) + 100; 
+
+            // Устанавливаю случайный интервал для каждой звезды
+            setInterval(() => {
+                changeOpacity(star, step, steps);
+                step = (step + 1) % steps.length;
+            }, interval);
+        });
     }
+
 
     // Вычисляет необходимое количество звёзд, которое нужно сгенерировать на экране
     // Она нужна, что бы на разных экранах количество звёзд было одинаковым
     function calculateStars(screenWidth, screenHeight) {
         const screenArea = screenWidth * screenHeight;
-        const baseNumberOfStars = 35; // Количество звёзд для экрана 1920x1080
+        const baseNumberOfStars = 40; // Количество звёзд для экрана 1920x1080
         const baseScreenArea = 1920 * 1080;
         
         return Math.round((screenArea / baseScreenArea) * baseNumberOfStars);
