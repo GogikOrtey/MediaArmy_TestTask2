@@ -1,19 +1,17 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // Стартовые стили для создаваемого объекта
+    // Стартовые стили для звезды
     const styles = {
         width: '0',
         height: '0',
-        // border: '2px solid transparent',
-        borderTopColor: 'rgba(255, 255, 255, 1)',
-        borderRightColor: 'rgba(255, 255, 255, 1)',
-        borderBottomColor: 'rgba(255, 255, 255, 1)',
-        borderLeftColor: 'rgba(255, 255, 255, 1)',
         transform: 'rotate(45deg)',
         position: 'absolute'
     };
 
     // Функция создания звезды, в случайных координатах
     function createStar() {
+        // Получаем случайный цвет, для звезды:
+        let randomColorForStars = RandColorForStars();
+
         const star = document.createElement('div');
         star.classList.add('star');
         Object.assign(star.style, styles);
@@ -22,12 +20,64 @@ document.addEventListener("DOMContentLoaded", function() {
         let randSizeBord = (Math.random() * 2.99) + 0.01; // От 0.01 до 3.0
         star.style.border = `${randSizeBord}px solid transparent`;
 
+        // Применяем случайный цвет к звезде:
+        star.style.borderTopColor = randomColorForStars;
+        star.style.borderRightColor = randomColorForStars;
+        star.style.borderBottomColor = randomColorForStars;
+        star.style.borderLeftColor = randomColorForStars;
+
+        // Задаём случайное положение на странице:
         const {x, y} = getRandomPosition();
         star.style.left = `${x}px`;
         star.style.top = `${y}px`;
+
+        // Добавляем на страницу:
         document.body.appendChild(star);
         return star;
     }
+
+    // Возвращает случайный цвет для звезды
+    function RandColorForStars() {
+        let whiteColor = 'rgba(255, 255, 255, 1)';       // Оригинальный, белый
+        let lightBlueColor = 'rgba(174, 225, 255, 1)';   // Светло-голубой
+        let lightOrangeColor = 'rgba(255, 243, 209, 1)'; // Светло-оранжевый
+
+        // Сначала вычисляем, к какому цвету результирующий будет ближе:
+        let rand1 = Math.random();
+        if(rand1 > 0 && rand1 < 0.5) {          // светло-голубой
+            // Смешиваем белый и светло-голубой цвет, в случайных %
+            return(blendColors(whiteColor, lightBlueColor, Math.random()));
+
+        } else if(rand1 > 0.5 && rand1 < 0.8) { // светло-оранжевый
+            return(blendColors(whiteColor, lightOrangeColor, Math.random()));
+
+        } else {                                
+            return whiteColor;                  // классический белый
+        }
+
+        // Функция смешивания двух цветов
+        // значение ratio - это в % то, насколько первый цвет будет приближен ко второму
+        function blendColors(color1, color2, ratio) {
+            // Функция для извлечения значений rgba из строки
+            function getRgbaValues(color) {
+                const rgba = color.match(/rgba?\((\d+),\s*(\d+),\s*(\d+),\s*([\d.]+)\)/);
+                return rgba ? rgba.slice(1, 5).map(Number) : [];
+            }
+
+            const [r1, g1, b1, a1] = getRgbaValues(color1);
+            const [r2, g2, b2, a2] = getRgbaValues(color2);
+
+            const r = Math.round(r1 * (1 - ratio) + r2 * ratio);
+            const g = Math.round(g1 * (1 - ratio) + g2 * ratio);
+            const b = Math.round(b1 * (1 - ratio) + b2 * ratio);
+            const a = a1 * (1 - ratio) + a2 * ratio;
+
+            return `rgba(${r}, ${g}, ${b}, ${a})`;
+        }
+    }
+
+
+
 
     // Получение случайных координат
     function getRandomPosition() {
