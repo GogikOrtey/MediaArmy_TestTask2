@@ -1,14 +1,7 @@
 <?php
-// echo "Привет, мир!\n";
 
 // Тематика - звёзды
 // Сгенерируем ~ 20 записей, а также найдём для них ссылки на изображения
-
-// $mass1 = ["1", "2", "3"];
-
-// // echo $mass1;
-// print_r($mass1);
-
 
 
 
@@ -38,9 +31,6 @@ if ($handle === false) {
 // Устанавливаем разделитель табуляции
 $separator = "\t";
 
-// Стандартное количество колонок а записи
-$expectedColumns = 3;
-
 // Печатаем ли мы ошибки, произошедшие в результате обработки строк?
 $isEchoErrors = true;
 
@@ -53,35 +43,24 @@ $allCounterForStr = 0;
 // Массив для хранения данных
 $data = [];
 
-// Читаем файл строка за строкой 
 while (($row = fgetcsv($handle, 0, $separator)) !== false) {
-    // print_r($row);
-
     $allCounterForStr++;
 
-    if (count($row) !== $expectedColumns) {
-        if($isEchoErrors) {
-            echo "Ошибка: Неправильное количество колонок в строке:\n"; 
-        }
-        print_r($row);
-        $encounteredErrorsCounter++;
-        continue;
-    }
-
-    // Проверяем, не пустые ли значения в колонках
+    // Проверяем значения в колонках и заменяем пустые на "-"
     foreach ($row as $index => $value) {
         if (empty($value)) {
-            if($isEchoErrors) {
-                echo "Ошибка: Пустое значение в строке:\n";
+            $row[$index] = "-";
+            if ($isEchoErrors) {
+                echo "Ошибка: Пустое значение заменено на '-' в строке:\n";
             }
             print_r($row);
             $encounteredErrorsCounter++;
-            continue 2; // Пропускаем строку
         }
     }
 
     $data[] = $row;
 }
+
 
 // Важно не забывать, что первый элемент массива содержит заголовки строк, а не данные
 
