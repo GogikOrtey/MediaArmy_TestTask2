@@ -12,9 +12,9 @@
 <body>
     <div class="header">
         <div class="button-bar">
-            <button class="nav-button">Кнопка 1</button>
-            <button class="nav-button">Кнопка 2</button>
-            <button class="nav-button">Кнопка 3</button>
+            <button class="nav-button">Стандартная страница</button>
+            <button class="nav-button">С мерцающими звёздами</button>
+            <button class="nav-button">В виде карточек</button>
         </div>
     </div>
     <!-- Динамически создающаяся таблица из массива php -->
