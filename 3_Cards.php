@@ -24,9 +24,8 @@
             for ($i = 1; $i < count($data); $i++) {
                 echo "<div class='card'>";
 
-                    if($data[$i][1] == "-") {                    // Есть ли в массиве корректная ссылка?
-                        // echo "<td class='center-column'>-</td>"; // Если нет
-                        echo('<img src="' . $data[$i][1] . '" alt="Card Image" class="card-img">'); // Если есть
+                    if($data[$i][1] == "-") {            // Есть ли в массиве корректная ссылка?
+                        echo('<img src="noImage.png">'); // Если нет
                     } else {
                         echo('<img src="' . $data[$i][1] . '" alt="Card Image" class="card-img">'); // Если есть
                     }

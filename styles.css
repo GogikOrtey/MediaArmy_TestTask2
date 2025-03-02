@@ -124,8 +124,10 @@ body {
 
 
 .cards-page {
-    background-color: #f5f5f5;
+    background-color: #f1f1f1;
     color: #000000;
+    font-family: Arial, Helvetica, sans-serif;
+
 
     /* body {
         display: flex;
@@ -171,6 +173,11 @@ body {
         /* border-radius: 10px 10px 0 0; */
         object-fit: cover;
     }
+
+    img {
+        width: 220px;
+        height: 120px;
+    }
     
     .card-title {
         font-size: 14px;
@@ -209,6 +216,7 @@ body {
         padding-top: 6px;
         color: black;
         text-decoration: none;
+        line-height: 24px; /* Устанавливаем высоту строки */
     }
 
     /* .button-into-cards {
