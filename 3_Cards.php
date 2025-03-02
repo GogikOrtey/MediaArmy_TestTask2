@@ -34,16 +34,26 @@
                     echo('<h2 class="card-title">'.$data[$i][0].'</h2>');
                     echo('<p class="card-text">' . $data[$i][2] . '</p>');
 
+                    echo('<a href="https://ya.ru/search/?text=Звезда%20' . $data[$i][0] . '%20интересные%20факты"');
+                    echo('<button class="button-into-cards">Узнать подробнее</button>');
+                    echo('</a>');
+
                 echo "</div>";
             }
         ?>
 
-        <!-- 
-        <div class="card">
+        <!-- <div class="card">
             <img src="your-image.jpg" alt="Card Image" class="card-img">
             <h2 class="card-title">Card Title</h2>
             <p class="card-text">This is a description text that fills the remaining space in the card.</p>
-        </div>
+            <button class="nav-button" onclick="window.location.href='https://ya.ru/search/?text=Запрос'">В виде карточек</button> 
+            <a href="https://ya.ru/search/?text=Запрос%20123" target="_blank">    
+                <button class="button-into-cards">Узнать подробнее</button>
+            </a>
+        </div> -->
+
+        <!-- 
+
         <div class="card">
             <img src="your-image.jpg" alt="Card Image" class="card-img">
             <h2 class="card-title">Card Title</h2>

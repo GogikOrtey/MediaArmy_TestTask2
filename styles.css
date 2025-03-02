@@ -196,7 +196,13 @@ body {
 
     .spase-undo-sooter {
         height: 50px;
+    }    
+
+    .button-into-cards {
+        width: 80%;
+        height: 25px;
+        font-size: 14px;
+        margin: auto 20px;
+        border: 1px red solid;
     }
-    
-    
 }
