@@ -34,7 +34,7 @@
                     echo('<h2 class="card-title">'.$data[$i][0].'</h2>');
                     echo('<p class="card-text">' . $data[$i][2] . '</p>');
 
-                    echo('<a href="https://ya.ru/search/?text=Звезда%20' . $data[$i][0] . '%20интересные%20факты"');
+                    echo('<a href="https://ya.ru/search/?text=Звезда%20' . $data[$i][0] . '%20интересные%20факты" target="_blank"');
                     echo('<button class="button-into-cards">Узнать подробнее</button>');
                     echo('</a>');
 

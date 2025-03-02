@@ -198,11 +198,24 @@ body {
         height: 50px;
     }    
 
-    .button-into-cards {
+    .card a {
+        text-align: center;
+        background-color: rgb(255, 218, 6);
+        width: 90%;
+        height: 30px;
+        margin: auto;
+        margin-bottom: 10px;
+        border-radius: 7px;
+        padding-top: 6px;
+        color: black;
+        text-decoration: none;
+    }
+
+    /* .button-into-cards {
         width: 80%;
         height: 25px;
         font-size: 14px;
         margin: auto 20px;
         border: 1px red solid;
-    }
+    } */
 }
