@@ -29,7 +29,7 @@
             <h2 class="card-title">Card Title</h2>
             <p class="card-text">This is a description text that fills the remaining space in the card.</p>
         </div>
-        <div class="card">
+        <!-- <div class="card">
             <img src="your-image.jpg" alt="Card Image" class="card-img">
             <h2 class="card-title">Card Title</h2>
             <p class="card-text">This is a description text that fills the remaining space in the card.</p>
@@ -43,8 +43,7 @@
             <img src="your-image.jpg" alt="Card Image" class="card-img">
             <h2 class="card-title">Card Title</h2>
             <p class="card-text">This is a description text that fills the remaining space in the card.</p>
-        </div>
-        <!-- Add more cards as needed -->
+        </div> -->
     </div>
 </body>
 </html>
