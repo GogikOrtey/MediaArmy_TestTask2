@@ -11,6 +11,11 @@
 </head>
 <body>
     <div class="header">
+        <div class="button-bar">
+            <button class="nav-button">Кнопка 1</button>
+            <button class="nav-button">Кнопка 2</button>
+            <button class="nav-button">Кнопка 3</button>
+        </div>
     </div>
     <!-- Динамически создающаяся таблица из массива php -->
     <div class="mainTable table-from-stars">

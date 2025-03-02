@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Получение случайных координат
     function getRandomPosition() {
         const x = Math.random() * (window.innerWidth-10)-10;
-        const y = Math.random() * (document.body.scrollHeight-160)-10+150;
+        const y = Math.random() * (document.body.scrollHeight-210)-10+200;
         return {x, y};
     }
 
