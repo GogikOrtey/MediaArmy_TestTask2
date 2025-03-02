@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Получение случайных координат
     function getRandomPosition() {
         const x = Math.random() * (window.innerWidth-10)-10;
-        const y = Math.random() * (window.innerHeight-10)-10;
+        const y = Math.random() * (document.body.scrollHeight-160)-10+150;
         return {x, y};
     }
 
@@ -87,7 +87,8 @@ document.addEventListener("DOMContentLoaded", function() {
         
         return Math.round((screenArea / baseScreenArea) * baseNumberOfStars);
     }
-    const starCount = calculateStars(window.innerWidth, window.innerHeight);
+    // const starCount = calculateStars(window.innerWidth, window.innerHeight);
+    const starCount = calculateStars(window.innerWidth, document.body.scrollHeight);
     
     console.log('Количество звёзд:', starCount);    
 
