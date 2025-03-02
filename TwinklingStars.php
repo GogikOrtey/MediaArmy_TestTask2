@@ -12,9 +12,9 @@
 <body>
     <div class="header">
         <div class="button-bar">
-            <button class="nav-button">Стандартная страница</button>
-            <button class="nav-button">С мерцающими звёздами</button>
-            <button class="nav-button">В виде карточек</button>
+            <button class="nav-button" onclick="window.location.href='SimplePage.php'">Стандартная страница</button>
+            <button class="nav-button" onclick="window.location.href='TwinklingStars.php'">С мерцающими звёздами</button>
+            <button class="nav-button" onclick="window.location.href='Cards.php'">В виде карточек</button>
         </div>
     </div>
     <!-- Динамически создающаяся таблица из массива php -->
