@@ -19,6 +19,26 @@
     </div>
     <!-- Динамически создающаяся таблица из массива php -->
     <div class="cards-area">
+        <?php
+            // Генерация карточек
+            for ($i = 1; $i < count($data); $i++) {
+                echo "<div class='card'>";
+
+                    if($data[$i][1] == "-") {                    // Есть ли в массиве корректная ссылка?
+                        // echo "<td class='center-column'>-</td>"; // Если нет
+                        echo('<img src="' . $data[$i][1] . '" alt="Card Image" class="card-img">'); // Если есть
+                    } else {
+                        echo('<img src="' . $data[$i][1] . '" alt="Card Image" class="card-img">'); // Если есть
+                    }
+                    
+                    echo('<h2 class="card-title">'.$data[$i][0].'</h2>');
+                    echo('<p class="card-text">' . $data[$i][2] . '</p>');
+
+                echo "</div>";
+            }
+        ?>
+
+        <!-- 
         <div class="card">
             <img src="your-image.jpg" alt="Card Image" class="card-img">
             <h2 class="card-title">Card Title</h2>
@@ -29,7 +49,7 @@
             <h2 class="card-title">Card Title</h2>
             <p class="card-text">This is a description text that fills the remaining space in the card.</p>
         </div>
-        <!-- <div class="card">
+        <div class="card">
             <img src="your-image.jpg" alt="Card Image" class="card-img">
             <h2 class="card-title">Card Title</h2>
             <p class="card-text">This is a description text that fills the remaining space in the card.</p>
