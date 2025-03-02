@@ -3,9 +3,12 @@ body {
     background-color: #000030; /* Тёмно-синий цвет */
     color: #FFFFFF; /* Белый цвет текста */
 
-    /* background-color: #d1d1d1; /* Тёмно-синий цвет */
-
     margin: 0;
+}
+
+.standart-page {
+    background-color: #dfdfdf;
+    color: #000000;
 }
 
 .header {
@@ -120,3 +123,7 @@ body {
 }
 
 
+.cards {
+    background-color: #fcfcfc;
+    color: #000000;
+}

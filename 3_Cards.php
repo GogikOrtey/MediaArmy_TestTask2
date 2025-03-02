@@ -9,8 +9,13 @@
     <?php include 'main.php'; ?>
     <!-- <script src="stars.js"></script> -->
 </head>
-<body>
+<body class="cards">
     <div class="header">
+        <div class="button-bar">
+            <button class="nav-button" onclick="window.location.href='1_SimplePage.php'">Стандартная страница</button>
+            <button class="nav-button" onclick="window.location.href='2_TwinklingStars.php'">С мерцающими звёздами</button>
+            <button class="nav-button" onclick="window.location.href='3_Cards.php'">В виде карточек</button>
+        </div>
     </div>
     <!-- Динамически создающаяся таблица из массива php -->
     <div class="mainTable">

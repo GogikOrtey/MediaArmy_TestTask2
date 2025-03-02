@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Она нужна, что бы на разных экранах количество звёзд было одинаковым
     function calculateStars(screenWidth, screenHeight) {
         const screenArea = screenWidth * screenHeight;
-        const baseNumberOfStars = 40; // Количество звёзд для экрана 1920x1080
+        const baseNumberOfStars = 60; // Количество звёзд для экрана 1920x1080
         const baseScreenArea = 1920 * 1080;
         
         return Math.round((screenArea / baseScreenArea) * baseNumberOfStars);
