@@ -13,7 +13,7 @@
     <div class="header">
     </div>
     <!-- Динамически создающаяся таблица из массива php -->
-    <div class="mainTable">
+    <div class="mainTable table-from-stars">
         <p class="title-for-table">Таблица:</p>
         <table>
             <thead>

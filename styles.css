@@ -54,4 +54,22 @@ body {
     }
 }
 
+/* Стили для таблицы на странице с мерцающими звёздами */
+.table-from-stars {
+    table {
+        background-color: rgba(31, 30, 48, 0.788);
+    }
+
+    th, td {
+        border: 1px solid #6d6d6d;
+    }
+
+    color: rgb(209, 209, 209);
+
+    th {
+        background-color: #000218;
+        font-weight: bold;
+    }
+}
+
 
